@@ -6,8 +6,7 @@
     <title>Dr. Subhadra Roy - Professional Website</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
@@ -27,23 +26,45 @@
             font-size: 1.2em;
             font-style: italic;
         }
+        nav {
+            background-color: #003a75;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 8px 15px;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #0056b3;
+        }
         main {
             max-width: 800px;
             margin: 20px auto;
             padding: 20px;
             background-color: white;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        section {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            transition: transform 0.5s ease;
+        }
+        section:hover {
+            transform: translateY(-10px);
         }
         h2 {
             color: #0056b3;
             border-bottom: 2px solid #0056b3;
             padding-bottom: 10px;
-        }
-        section {
-            margin-bottom: 20px;
-        }
-        .contact-info, .publications, .records, .achievements, .about-me {
-            margin-bottom: 20px;
         }
         .contact-info p, .about-me p {
             line-height: 1.6;
@@ -54,15 +75,35 @@
             text-align: center;
             padding: 10px 0;
         }
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: none;
+        }
     </style>
 </head>
 <body>
+
     <header>
         <h1>Dr. Subhadra Roy</h1>
         <p>A Student Of Nature, By Nature</p>
     </header>
+
+    <nav>
+        <a href="#contact">Contact</a>
+        <a href="#publications">Publications</a>
+        <a href="#academic">Academic Records</a>
+        <a href="#professional">Professional Records</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#about">About Me</a>
+    </nav>
+
     <main>
-        <section class="contact-info">
+        <section id="contact" class="scroll-reveal">
             <h2>Contact Information</h2>
             <p><strong>Position:</strong> Associate Professor, Surendranath College</p>
             <p><strong>Department:</strong> Zoology</p>
@@ -70,7 +111,7 @@
             <p><strong>Email:</strong> roysubhadra40@gmail.com</p>
         </section>
 
-        <section class="publications">
+        <section id="publications" class="scroll-reveal">
             <h2>Publications</h2>
             <ul>
                 <li>S Ghosh, S Roy, M Banerjee & P Maity: Modulation of tumor induced angiogenesis in Ehrlich ascites tumor: Exp. Clin. Cancer Res. 23, 4, 2004.</li>
@@ -80,14 +121,14 @@
             </ul>
         </section>
 
-        <section class="records">
+        <section id="academic" class="scroll-reveal">
             <h2>Academic Records</h2>
             <p>PhD degree in Life Sciences on 16th September 2008 from Jadavpur University (Topic of thesis: Studies on therapeutic potentials of macromolecules related to glutamine metabolism on experimental malignancy and in vitro human cell culture with special emphasis on tumor induced angiogenesis).</p>
             <p>Masters degree in Zoology from University of Kalyani in 2002 achieving First class First position.</p>
             <p>Bachelors degreee in Zoology from University of Kalyani in 2000 achieving First class First position.</p>
         </section>
 
-        <section class="professional-records">
+        <section id="professional" class="scroll-reveal">
             <h2>Professional Records</h2>
             <ul>
                 <li>Associate Professor in Zoology at Surendranath College, Kolkata, 2006 till date.</li>
@@ -96,7 +137,7 @@
             </ul>
         </section>
 
-        <section class="achievements">
+        <section id="achievements" class="scroll-reveal">
             <h2>Educational Achievements</h2>
             <ul>
                 <li>Qualified NET (National Eligibility Test) for lectureship in Indian Universities/Colleges conducted by CSIR-UGC, Govt. of India in June 2002.</li>
@@ -104,13 +145,33 @@
             </ul>
         </section>
 
-        <section class="about-me">
+        <section id="about" class="scroll-reveal">
             <h2>About Me</h2>
             <p>Dr. Subhadra Roy is currently working as Associate Professor in Zoology at Surendranath College Kolkata, affiliated to the University of Calcutta. She was awarded the prestigious Satish and Tulsi Manna Memorial Endowment Bronze Medal” for achieving First Class First position in M. Sc. Zoology under the University of Kalyani. She did her research work in cancer biology and completed her PhD degree from Chittaranjan National Cancer Institute. Dr. Roy is also member of the Indian Science Congress Association and the Zoological Society, Kolkata. She has to her credit research papers in Indian and foreign journals and has also authored a textbook on Non-Chordate Zoology.</p>
         </section>
     </main>
+
     <footer>
         <p>&copy; 2024 Dr. Subhadra Roy. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Scroll reveal functionality
+        const revealElements = document.querySelectorAll('.scroll-reveal');
+
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            revealElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) {
+                    el.classList.add('visible');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+    </script>
+
 </body>
 </html>
