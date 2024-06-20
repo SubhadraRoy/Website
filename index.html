@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Subhadra Roy - Professional Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
         :root {
@@ -16,7 +17,7 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
             background-color: var(--bg-color);
@@ -27,7 +28,7 @@
         header {
             background: var(--gradient);
             color: var(--white-color);
-            padding: 20px 0;
+            padding: 40px 0;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -35,12 +36,13 @@
 
         header h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 3em;
+            letter-spacing: 1px;
         }
 
         header p {
             margin: 0;
-            font-size: 1.2em;
+            font-size: 1.5em;
             font-style: italic;
         }
 
@@ -49,7 +51,7 @@
             border-right: 3px solid var(--white-color);
             white-space: nowrap;
             overflow: hidden;
-            animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
+            animation: typing 4s steps(30, end), blink-caret 0.75s step-end infinite;
         }
 
         @keyframes typing {
@@ -66,7 +68,7 @@
             background-color: var(--nav-bg-color);
             display: flex;
             justify-content: center;
-            padding: 10px 0;
+            padding: 15px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -75,9 +77,9 @@
         nav a {
             color: var(--white-color);
             text-decoration: none;
-            margin: 0 15px;
-            padding: 8px 15px;
-            font-size: 1.1em;
+            margin: 0 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
@@ -87,23 +89,21 @@
         }
 
         main {
-            max-width: 1000px;
-            margin: 20px auto;
+            max-width: 1200px;
+            margin: 40px auto;
             padding: 20px;
             background-color: var(--white-color);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            display: flex;
-            flex-wrap: wrap;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
         }
 
         .card {
             background-color: var(--white-color);
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
             padding: 20px;
-            flex: 1 1 calc(50% - 40px);
             opacity: 0;
             transform: translateY(50px);
             transition: opacity 0.6s ease, transform 0.6s ease;
@@ -140,11 +140,61 @@
             color: var(--main-color);
         }
 
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+        }
+
+        .modal-content {
+            background-color: var(--white-color);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            width: 100%;
+            text-align: left;
+            position: relative;
+        }
+
+        .modal-content h2 {
+            margin-top: 0;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
         footer {
             background: var(--gradient);
             color: var(--white-color);
             text-align: center;
-            padding: 10px 0;
+            padding: 20px 0;
+        }
+
+        footer .social-icons {
+            margin: 10px 0;
+        }
+
+        footer .social-icons a {
+            color: var(--white-color);
+            margin: 0 10px;
+            font-size: 1.5em;
+            transition: color 0.3s ease;
+        }
+
+        footer .social-icons a:hover {
+            color: var(--main-color);
         }
 
         .back-to-top {
@@ -167,9 +217,22 @@
             background-color: var(--nav-bg-color);
         }
 
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-color);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--main-color);
+            border-radius: 10px;
+        }
+
         @media (max-width: 768px) {
-            .card {
-                flex: 1 1 100%;
+            main {
+                grid-template-columns: 1fr;
             }
 
             nav {
@@ -212,18 +275,20 @@
         <div class="card scroll-reveal" id="publications">
             <h2>Publications</h2>
             <ul>
-                <li>S Ghosh, S Roy, M Banerjee & P Maity: Modulation of tumor induced angiogenesis in Ehrlich ascites tumor: Exp. Clin. Cancer Res. 23, 4, 2004.</li>
-                <li>S Roy, P Maity: Effect of glutamine analogue-acivicin on tumor induced angiogenesis in Ehrlich ascites carcinoma. Indian J Exp Biol. 2005 May; 43, 5:407-13.</li>
-                <li>S Roy, P Maity: Modulation of metastatic potential of B16F10 melanoma cells by acivicin: synergistic action of glutaminase and potentiation of cisplatin cytotoxicity. Asian Pacific J Cancer Prev. 2007, 8(2): 301-306.</li>
-                <li>S Roy, S Ghosh, Mallick P & P Maity: Acivicin with glutaminase regulates proliferation and invasion of human MCF-7 and OAW-42 cells-An in vitro Indian J Exp Biol. 2008, 46: 22-26.</li>
+                <li><a href="#publication-modal" class="publication-link">S Ghosh, S Roy, M Banerjee & P Maity: Modulation of tumor induced angiogenesis in Ehrlich ascites tumor: Exp. Clin. Cancer Res. 23, 4, 2004.</a></li>
+                <li><a href="#publication-modal" class="publication-link">S Roy, P Maity: Effect of glutamine analogue-acivicin on tumor induced angiogenesis in Ehrlich ascites carcinoma. Indian J Exp Biol. 2005 May; 43, 5:407-13.</a></li>
+                <li><a href="#publication-modal" class="publication-link">S Roy, P Maity: Modulation of metastatic potential of B16F10 melanoma cells by acivicin: synergistic action of glutaminase and potentiation of cisplatin cytotoxicity. Asian Pacific J Cancer Prev. 2007, 8(2): 301-306.</a></li>
+                <li><a href="#publication-modal" class="publication-link">S Roy, S Ghosh, Mallick P & P Maity: Acivicin with glutaminase regulates proliferation and invasion of human MCF-7 and OAW-42 cells-An in vitro Indian J Exp Biol. 2008, 46: 22-26.</a></li>
             </ul>
         </div>
 
         <div class="card scroll-reveal" id="academic">
             <h2>Academic Records</h2>
-            <p>PhD degree in Life Sciences on 16th September 2008 from Jadavpur University (Topic of thesis: Studies on therapeutic potentials of macromolecules related to glutamine metabolism on experimental malignancy and in vitro human cell culture with special emphasis on tumor induced angiogenesis).</p>
-            <p>Masters degree in Zoology from University of Kalyani in 2002 achieving First class First position.</p>
-            <p>Bachelors degree in Zoology from University of Kalyani in 2000 achieving First class First position.</p>
+            <ul>
+                <li>PhD degree in Life Sciences on 16th September 2008 from Jadavpur University (Topic of thesis: Studies on therapeutic potentials of macromolecules related to glutamine metabolism on experimental malignancy and in vitro human cell culture with special emphasis on tumor induced angiogenesis).</li>
+                <li>Masters degree in Zoology from University of Kalyani in 2002 achieving First class First position.</li>
+                <li>Bachelors degree in Zoology from University of Kalyani in 2000 achieving First class First position.</li>
+            </ul>
         </div>
 
         <div class="card scroll-reveal" id="professional">
@@ -252,9 +317,22 @@
 
     <footer>
         <p>&copy; 2024 Dr. Subhadra Roy. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://www.linkedin.com" target="_blank"><i class="material-icons">linkedin</i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="material-icons">twitter</i></a>
+            <a href="https://www.facebook.com" target="_blank"><i class="material-icons">facebook</i></a>
+        </div>
     </footer>
 
     <button class="back-to-top" onclick="scrollToTop()">↑</button>
+
+    <div class="modal" id="publication-modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <h2>Publication Details</h2>
+            <p id="modal-text"></p>
+        </div>
+    </div>
 
     <script>
         // Scroll reveal functionality
@@ -288,6 +366,28 @@
 
         const scrollToTop = () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+
+        // Modal functionality
+        const modal = document.getElementById('publication-modal');
+        const modalText = document.getElementById('modal-text');
+
+        document.querySelectorAll('.publication-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                modalText.textContent = link.textContent;
+                modal.style.display = 'flex';
+            });
+        });
+
+        const closeModal = () => {
+            modal.style.display = 'none';
+        };
+
+        window.onclick = (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
         };
     </script>
 
