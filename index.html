@@ -9,7 +9,8 @@
     <style>
         :root {
             --main-color: #0056b3;
-            --nav-bg-color: #003a75;
+            --secondary-color: #009688;
+            --nav-bg-color: rgba(0, 0, 0, 0.8);
             --text-color: #333;
             --bg-color: #f4f4f4;
             --white-color: #fff;
@@ -23,12 +24,13 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
 
         header {
-            background: var(--gradient);
+            background: url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
             color: var(--white-color);
-            padding: 40px 0;
+            padding: 100px 20px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -245,6 +247,52 @@
                 text-align: center;
             }
         }
+
+        .parallax {
+            background: url('https://via.placeholder.com/1200x800') no-repeat center center/cover;
+            height: 400px;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white-color);
+            font-size: 2em;
+            font-weight: bold;
+            text-align: center;
+            transform-style: preserve-3d;
+            perspective: 1px;
+        }
+
+        .testimonials {
+            background: var(--bg-color);
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .testimonial-card {
+            background-color: var(--white-color);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px;
+            display: inline-block;
+            max-width: 300px;
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: scale(1.05);
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+        }
+
+        .testimonial-card h3 {
+            color: var(--main-color);
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -263,19 +311,21 @@
         <a href="#about">About Me</a>
     </nav>
 
+    <div class="parallax">
+        Professional Profile
+    </div>
+
     <main>
         <div class="card scroll-reveal" id="contact">
-            <h2>Contact Information</h2>
-            <p class="icon-text"><i class="material-icons">work</i><strong>Position:</strong> Associate Professor, Surendranath College</p>
-            <p class="icon-text"><i class="material-icons">school</i><strong>Department:</strong> Zoology</p>
-            <p class="icon-text"><i class="material-icons">phone</i><strong>Phone:</strong> +91 9831638024</p>
-            <p class="icon-text"><i class="material-icons">email</i><strong>Email:</strong> roysubhadra40@gmail.com</p>
+            <h2>Contact</h2>
+            <p class="icon-text"><i class="material-icons">phone</i> +91 9831638024</p>
+            <p class="icon-text"><i class="material-icons">email</i> roysubhadra40@gmail.com</p>
         </div>
 
         <div class="card scroll-reveal" id="publications">
             <h2>Publications</h2>
             <ul>
-                <li><a href="#publication-modal" class="publication-link">S Ghosh, S Roy, M Banerjee & P Maity: Modulation of tumor induced angiogenesis in Ehrlich ascites tumor: Exp. Clin. Cancer Res. 23, 4, 2004.</a></li>
+                <li><a href="#publication-modal" class="publication-link">S Ghosh, S Roy, M Banerjee & P Maity: Modulation of tumor induced angiogenesis in Ehrlich ascites tumor: Exp.Clin.Cancer Res. 23, 4, 2004.</a></li>
                 <li><a href="#publication-modal" class="publication-link">S Roy, P Maity: Effect of glutamine analogue-acivicin on tumor induced angiogenesis in Ehrlich ascites carcinoma. Indian J Exp Biol. 2005 May; 43, 5:407-13.</a></li>
                 <li><a href="#publication-modal" class="publication-link">S Roy, P Maity: Modulation of metastatic potential of B16F10 melanoma cells by acivicin: synergistic action of glutaminase and potentiation of cisplatin cytotoxicity. Asian Pacific J Cancer Prev. 2007, 8(2): 301-306.</a></li>
                 <li><a href="#publication-modal" class="publication-link">S Roy, S Ghosh, Mallick P & P Maity: Acivicin with glutaminase regulates proliferation and invasion of human MCF-7 and OAW-42 cells-An in vitro Indian J Exp Biol. 2008, 46: 22-26.</a></li>
@@ -314,6 +364,18 @@
             <p>Dr. Subhadra Roy is currently working as Associate Professor in Zoology at Surendranath College Kolkata, affiliated to the University of Calcutta. She was awarded the prestigious Satish and Tulsi Manna Memorial Endowment Bronze Medal” for achieving First Class First position in M. Sc. Zoology under the University of Kalyani. She did her research work in cancer biology and completed her PhD degree from Chittaranjan National Cancer Institute. Dr. Roy is also member of the Indian Science Congress Association and the Zoological Society, Kolkata. She has to her credit research papers in Indian and foreign journals and has also authored a textbook on Non-Chordate Zoology.</p>
         </div>
     </main>
+
+    <section class="testimonials">
+        <h2>Testimonials</h2>
+        <div class="testimonial-card">
+            <p>"Dr. Roy is an exceptional educator who deeply cares about her students' success."</p>
+            <h3>- John Doe</h3>
+        </div>
+        <div class="testimonial-card">
+            <p>"Her research work is groundbreaking and has significantly contributed to the field."</p>
+            <h3>- Jane Smith</h3>
+        </div>
+    </section>
 
     <footer>
         <p>&copy; 2024 Dr. Subhadra Roy. All rights reserved.</p>
