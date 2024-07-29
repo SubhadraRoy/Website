@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications - Dr. Subhadra Roy</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <a href="index.html">Dr. Subhadra Roy</a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Me</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="section scroll-reveal">
+            <h2>Publications</h2>
+            <ul>
+                <li>S Ghosh, S Roy, M Banerjee & P Maity: Modulation of tumor induced angiogenesis in Ehrlich ascites tumor: Exp.Clin.Cancer Res. 23, 4, 2004.</li>
+                <li>S Roy, P Maity: Effect of glutamine analogue-acivicin on tumor induced angiogenesis in Ehrlich ascites carcinoma. Indian J Exp Biol. 2005 May; 43, 5:407-13.</li>
+                <li>S Roy, P Maity: Modulation of metastatic potential of B16F10 melanoma cells by acivicin: synergistic action of glutaminase and potentiation of cisplatin cytotoxicity. Asian Pacific J Cancer Prev. 2007, 8(2): 301-306.</li>
+                <li>S Roy, S Ghosh, Mallick P & P Maity: Acivicin with glutaminase regulates proliferation and invasion of human MCF-7 and OAW-42 cells-An in vitro Indian J Exp Biol. 2008, 46: 22-26.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Dr. Subhadra Roy. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Scroll reveal functionality
+        const revealElements = document.querySelectorAll('.scroll-reveal');
+
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            revealElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) {
+                    el.classList.add('visible');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+    </script>
+
+</body>
+</html>
