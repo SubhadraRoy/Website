@@ -38,12 +38,14 @@ nav a {
 
 nav a:hover {
     color: #1e90ff;
+    /* Add a subtle hover effect */
+    transform: scale(1.05);
 }
 
 /* Hero section */
 .hero {
     height: 100vh;
-    background-image: url('../images/background.jpg');
+    background-image: url('background.jpg');
     background-size: cover;
     background-attachment: fixed;
     display: flex;
@@ -59,6 +61,8 @@ nav a:hover {
     font-size: 3rem;
     margin-bottom: 20px;
     animation: fadeInDown 1s ease-in-out;
+    /* Add a subtle text shadow */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero p {
@@ -98,7 +102,7 @@ nav a:hover {
     margin-bottom: 40px;
     padding: 20px;
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.9); /* Slightly more opaque background */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, background 0.3s;
 }
@@ -106,6 +110,8 @@ nav a:hover {
 .section:hover {
     transform: translateY(-10px);
     background: rgba(255, 255, 255, 1);
+    /* Add a subtle hover effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .section h2 {
@@ -135,7 +141,6 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
-
 
 .scroll-reveal.visible {
     opacity: 1;
