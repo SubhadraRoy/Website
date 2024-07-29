@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Dr. Subhadra Roy</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <a href="index.html">Dr. Subhadra Roy</a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="publications.html">Publications</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="section scroll-reveal">
+            <h2>About Me</h2>
+            <p>Dr. Subhadra Roy is currently working as Associate Professor in Zoology at Surendranath College Kolkata, affiliated to the University of Calcutta. She was awarded the prestigious Satish and Tulsi Manna Memorial Endowment Bronze Medal for achieving First Class First position in M. Sc. Zoology under the University of Kalyani. She did her research work in cancer biology and completed her PhD degree from Chittaranjan National Cancer Institute. Dr. Roy is also a member of the Indian Science Congress Association and the Zoological Society, Kolkata. She has to her credit research papers in Indian and foreign journals and has also authored a textbook on Non-Chordate Zoology.</p>
+        </section>
+
+        <section class="section scroll-reveal">
+            <h2>Academic Records</h2>
+            <ul>
+                <li>PhD degree in Life Sciences on 16th September 2008 from Jadavpur University</li>
+                <li>Masters degree in Zoology from University of Kalyani in 2002</li>
+                <li>Bachelors degree in Zoology from University of Kalyani in 2000</li>
+            </ul>
+        </section>
+
+        <section class="section scroll-reveal">
+            <h2>Professional Records</h2>
+            <ul>
+                <li>Associate Professor in Zoology at Surendranath College, Kolkata, 2006 till date</li>
+                <li>Senior Research Fellow at Chittaranjan National Cancer Institute, 2005-2006</li>
+                <li>Junior Research Fellow at Chittaranjan National Cancer Institute, 2003-2005</li>
+            </ul>
+        </section>
+
+        <section class="section scroll-reveal">
+            <h2>Achievements</h2>
+            <ul>
+                <li>Awarded “Satish and Tulsi Manna Memorial Endowment Bronze Medal” for achieving First Class First position in M. Sc. Zoology under the University of Kalyani</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Dr. Subhadra Roy. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Scroll reveal functionality
+        const revealElements = document.querySelectorAll('.scroll-reveal');
+
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            revealElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) {
+                    el.classList.add('visible');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+    </script>
+
+</body>
+</html>
