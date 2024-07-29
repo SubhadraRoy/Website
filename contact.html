@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Dr. Subhadra Roy</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <a href="index.html">Dr. Subhadra Roy</a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Me</a>
+            <a href="publications.html">Publications</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="section scroll-reveal">
+            <h2>Contact</h2>
+            <p>Phone: +91 9831638024</p>
+            <p>Email: roysubhadra40@gmail.com</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Dr. Subhadra Roy. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Scroll reveal functionality
+        const revealElements = document.querySelectorAll('.scroll-reveal');
+
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            revealElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) {
+                    el.classList.add('visible');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+    </script>
+
+</body>
+</html>
