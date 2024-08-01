@@ -1,4 +1,3 @@
-/* Basic reset */
 * {
     margin: 0;
     padding: 0;
@@ -16,7 +15,7 @@ body {
 
 /* Navigation bar */
 nav {
-    background: rgba(0, 0, 50, 0.8);
+    background: rgba(0, 0, 50, 0.9); /* Darker background */
     padding: 15px 30px;
     display: flex;
     justify-content: space-between;
@@ -33,13 +32,12 @@ nav a {
     text-decoration: none;
     margin: 0 15px;
     font-size: 1.1rem;
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.3s;
 }
 
 nav a:hover {
-    color: #1e90ff;
-    /* Add a subtle hover effect */
-    transform: scale(1.05);
+    color: #1e90ff; /* Highlight color */
+    transform: scale(1.05) translateY(-1px); /* Add a subtle upward lift */
 }
 
 /* Hero section */
@@ -61,7 +59,6 @@ nav a:hover {
     font-size: 3rem;
     margin-bottom: 20px;
     animation: fadeInDown 1s ease-in-out;
-    /* Add a subtle text shadow */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -95,22 +92,23 @@ nav a:hover {
 /* Main content */
 .container {
     padding: 70px 20px;
-    margin-top: 60px; /* Adjust for fixed nav */
+    margin-top: 100px; /* Adjust for fixed nav */
 }
 
 .section {
     margin-bottom: 40px;
     padding: 20px;
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.9); /* Slightly more opaque background */
+    background: rgba(255, 255, 255, 0.95); /* More opaque background */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, background 0.3s;
+    position: relative;
+    overflow: hidden;
 }
 
 .section:hover {
     transform: translateY(-10px);
-    background: rgba(255, 255, 255, 1);
-    /* Add a subtle hover effect */
+    background: #fff; /* Full white background on hover */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -124,10 +122,12 @@ nav a:hover {
 
 /* Footer */
 footer {
-    background: rgba(0, 0, 50, 0.8);
+    background: rgba(0, 0, 50, 0.9); /* Darker footer background */
     color: white;
     text-align: center;
     padding: 15px 0;
+    position: relative;
+    z-index: 1; /* Ensure footer is above content */
 }
 
 /* Scroll reveal */
@@ -135,11 +135,6 @@ footer {
     opacity: 0;
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     transform: translateY(20px);
-}
-
-.scroll-reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .scroll-reveal.visible {
