@@ -6,17 +6,17 @@
     <title>Dr. Subhadra Roy - Home</title>
     <link rel="stylesheet" href="css/styles.css">
     <style>
+        /* General Styling */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('https://images.pexels.com/photos/638738/pexels-photo-638738.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-            background-size: cover;
-            background-attachment: fixed;
+            background-color: #f9f9f9;
             color: #333;
             line-height: 1.6;
         }
 
+        /* Navigation Styles */
         nav {
             display: flex;
             justify-content: space-between;
@@ -49,41 +49,28 @@
             color: #007BFF;
         }
 
+        /* Hero Section Styles */
         .hero {
+            position: relative;
+            height: 100vh;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
             text-align: center;
             color: white;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-            position: relative;
+            background-image: url('https://i.pinimg.com/564x/f0/b9/f9/f0b9f9378659c642d64843c946fc13b6.jpg');
+            background-size: cover;
+            background-position: center;
             overflow: hidden;
         }
 
-        .hero:before {
-            content: '';
+        .hero-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1;
-        }
-
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://images.pexels.com/photos/638738/pexels-photo-638738.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-            background-size: cover;
-            background-position: center;
-            filter: blur(8px);
-            z-index: 0;
+            background-color: rgba(0, 0, 0, 0.5);
         }
 
         .hero-content {
@@ -106,17 +93,23 @@
         @keyframes fadeIn {
             from {
                 opacity: 0;
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
+                transform: translateY(0);
             }
         }
 
+        /* Main Content Section */
         .container {
-            padding: 50px 20px;
+            padding: 50px;
             background: rgba(255, 255, 255, 0.95);
             position: relative;
             z-index: 1;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-top: -100px; /* Adjust based on hero height */
         }
 
         .section {
@@ -132,17 +125,94 @@
             transform: translateY(0);
         }
 
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #007BFF;
+        }
+
+        .section p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        /* Footer Styles */
         footer {
             text-align: center;
             padding: 20px;
             background: rgba(255, 255, 255, 0.95);
             position: relative;
             z-index: 1;
+            margin-top: 50px;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Scroll Reveal Animation */
+        @keyframes slideIn {
+            from {
+                transform: translateY(50%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .scroll-reveal {
+            animation: slideIn 1s forwards;
+        }
+
+        /* Scroll Down Arrow Animation */
+        .scroll-down {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .scroll-down i {
+            font-size: 2rem;
+            color: #007BFF;
+        }
+
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none;
+            z-index: 1000;
+            transition: opacity 0.3s ease;
+        }
+
+        .scroll-to-top:hover {
+            opacity: 0.8;
         }
     </style>
 </head>
 <body>
 
+    <!-- Navigation Bar -->
     <nav>
         <div class="logo"></div>
         <div class="nav-links">
@@ -153,14 +223,16 @@
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <header class="hero">
-        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1>Dr. Subhadra Roy</h1>
             <p>"A Student Of Nature, By Nature"</p>
         </div>
     </header>
 
+    <!-- Main Content -->
     <main class="container">
         <section class="section scroll-reveal">
             <h2>Specialization</h2>
@@ -178,12 +250,26 @@
         </section>
     </main>
 
+    <!-- Scroll Down Arrow -->
+    <div class="scroll-down" onclick="scrollToMain()">
+        <i class="fas fa-angle-down"></i>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-to-top" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Dr. Subhadra Roy. All rights reserved.</p>
     </footer>
 
+    <!-- Font Awesome Icons (for arrows) -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- Scroll Reveal Script -->
     <script>
-        // Scroll reveal functionality
         const revealElements = document.querySelectorAll('.scroll-reveal');
 
         const revealOnScroll = () => {
@@ -198,7 +284,31 @@
 
         window.addEventListener('scroll', revealOnScroll);
         window.addEventListener('load', revealOnScroll);
-    </script>
 
-</body>
-</html>
+        // Scroll Down Arrow Function
+        function scrollToMain() {
+            const mainSection = document.querySelector('.container');
+            window.scrollTo({
+                top: mainSection.offsetTop,
+                behavior: 'smooth'
+            });
+        }
+
+        // Scroll to Top Button Function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show/Hide Scroll to Top Button
+        window.addEventListener('scroll', () => {
+            const scrollButton = document.querySelector('.scroll-to-top');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollButton.style.display = 'block';
+            } else {
+                scrollButton.style.display = 'none';
+            }
+        });
+    </script
