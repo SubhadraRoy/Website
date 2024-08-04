@@ -37,12 +37,13 @@
             background-image: url('https://www.surendranathcollege.ac.in/wp-content/uploads/2021/10/IMG-20211028-WA0005.jpg');
             background-size: cover;
             background-position: center;
+            flex-shrink: 0; /* Ensure the logo doesn't shrink */
         }
 
         .nav-links {
             display: flex;
             gap: 20px;
-            margin-right: 20px; /* Adjust margin to move links left */
+            margin-left: auto; /* Pushes the links to the left */
         }
 
         .nav-links a {
@@ -51,6 +52,7 @@
             font-weight: 500;
             position: relative;
             transition: color 0.3s ease;
+            padding: 0 10px; /* Add padding for better visibility */
         }
 
         .nav-links a::after {
