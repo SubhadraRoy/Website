@@ -20,10 +20,9 @@
         /* Navigation Styles */
         nav {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            background: #FFFFFF; /* Light background */
-            padding: 15px 30px;
+            background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            padding: 10px 20px; /* Reduced padding for a smaller header */
             position: fixed;
             top: 0;
             width: 100%;
@@ -33,18 +32,30 @@
             overflow: auto; /* Handle overflow */
         }
 
+        .nav-content {
+            display: flex;
+            align-items: center;
+            gap: 15px; /* Space between logo and text */
+        }
+
         .logo {
-            width: 70px;
-            height: 70px;
+            width: 60px; /* Adjust size as needed */
+            height: 60px; /* Adjust size as needed */
             background-image: url('https://www.surendranathcollege.ac.in/wp-content/uploads/2021/10/IMG-20211028-WA0005.jpg');
             background-size: cover;
             background-position: center;
             flex-shrink: 0; /* Ensure the logo doesn't shrink */
         }
 
+        .college-name {
+            font-size: 1rem; /* Adjust font size for a smaller header */
+            font-weight: 600;
+            color: #333; /* Dark text */
+        }
+
         .nav-links {
             display: flex;
-            gap: 20px;
+            gap: 15px;
             margin-left: auto; /* Align links to the right */
         }
 
@@ -54,7 +65,8 @@
             font-weight: 500;
             position: relative;
             transition: color 0.3s ease;
-            padding: 0 15px; /* Ensure enough space around links */
+            padding: 0 10px; /* Ensure enough space around links */
+            font-size: 0.9rem; /* Adjust font size for a smaller header */
         }
 
         .nav-links a::after {
@@ -81,7 +93,7 @@
             height: 100vh;
             text-align: center;
             color: #FFFFFF; /* Light text */
-            background-image: url('https://i.pinimg.com/564x/f0/b9/f9/f0b9f9378659c642d64843c946fc13b6.jpg');
+            background-image: url('https://images.pexels.com/photos/638738/pexels-photo-638738.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
             background-size: cover;
             background-position: center;
             position: relative;
@@ -252,7 +264,10 @@
 
     <!-- Navigation Bar -->
     <nav>
-        <div class="logo"></div>
+        <div class="nav-content">
+            <div class="logo"></div>
+            <div class="college-name">Surendranath College</div>
+        </div>
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="about.html">About Me</a>
